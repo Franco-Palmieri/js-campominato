@@ -16,9 +16,22 @@ var randomNums = [];
 while (randomNums.length < 16){ //16 numeri
     var num = Math.floor(Math.random()* 100 + 1); //numero random da 1 a 100
     if (isInArray(randomNums, num)){ //se il numero non è presente nell'array viene pushato
-
     }else{
         randomNums.push(num);
     }
 }
 console.log(randomNums);
+
+//NUMERI UTENTE
+
+var userNums = [];
+
+while(userNums.length < 84){
+    var userNum = prompt("inserisci un numero da 1 a 100");
+    if(isInArray(randomNums, userNum)){
+        alert("fine dei giochi");
+        break;
+    }else{
+        userNums.push(userNum);
+    }
+}
