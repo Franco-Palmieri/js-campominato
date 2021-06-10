@@ -11,14 +11,16 @@ function isInArray(array, element) {
     }
     return false;
 }
+
 var randomNums = [];
+var score = document.getElementById("score");
  
 while (randomNums.length < 16){ //16 numeri
     var num = Math.floor(Math.random()* 100 + 1); //numero random da 1 a 100
-    if (isInArray(randomNums, num)){ //se il numero non è presente nell'array viene pushato
-    }else{
+    if (!isInArray(randomNums, num)){ //se il numero non è presente nell'array viene pushato
         randomNums.push(num);
     }
+        
 }
 console.log(randomNums);
 
@@ -27,7 +29,7 @@ console.log(randomNums);
 var userNums = [];
 
 while(userNums.length < 84){
-    var userNum = prompt("inserisci un numero da 1 a 100");
+    var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
     if(isInArray(randomNums, userNum)){
         alert("fine dei giochi");
         break;
@@ -35,3 +37,6 @@ while(userNums.length < 84){
         userNums.push(userNum);
     }
 }
+var result = userNums.length;
+score.innerHTML = "il tuo punteggio è: " + " " + result;
+
