@@ -33,6 +33,9 @@ while(userNums.length < 84){
     if(isInArray(randomNums, userNum)){
         alert("fine dei giochi");
         break;
+    }else if(isInArray(userNums, userNum)){
+        alert("hai gia inserito il numero")
+        userNum;
     }else{
         userNums.push(userNum);
     }
